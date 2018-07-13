@@ -1,0 +1,47 @@
+sudo strace /usr/libexec/gcc/x86_64-redhat-linux/4.8.5/collect2 \
+demo1.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o \
+-lgcc -lgcc_s  -lc \
+-m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 \
+-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 \
+-L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../.. 
+
+
+
+
+sudo strace ld \
+demo1.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o \
+-lgcc -lgcc_s  -lc \
+-m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 \
+-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 \
+-L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../.. 
+
+
+
+sudo strace ld \
+demo1.o \
+/usr/lib64/crt1.o \
+/usr/lib64/crti.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o \
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o \
+/usr/lib64/crtn.o \
+-lgcc -lgcc_s  -lc \
+-m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 \
+-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5 \
+-L/usr/lib64 \
+-L/lib64 -L/usr/lib64 -L/usr/lib/ 
+
+
+
+# collect2程序里调用ld
